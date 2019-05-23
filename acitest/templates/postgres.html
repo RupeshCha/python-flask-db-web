@@ -15,6 +15,7 @@
     
     <link href="../static/signup.css" rel="stylesheet">
     
+    
   </head>
  
   <body>
@@ -23,32 +24,51 @@
       <div class="header">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" ><a href="main">Home</a></li>
-            <li role="presentation"><a href="#">Sign In</a></li>
-            <li role="presentation" class="active"><a href="#">Sign Up</a></li>
+            <li role="presentation" ><a href="main">Postgres</a></li>
+            <li role="presentation"><a href="#">Mysql</a></li>
+            <li role="presentation" class="active"><a href="#">Ms SQL</a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">Python Flask App</h3>
+       
       </div>
  
       <div class="jumbotron">
-        <h1>Bucket List App</h1>
-        <form class="form-signin">
+        <h1>ACI List App</h1>
+        <form class="form-signin" action="/" method="post">
         <label for="inputName" class="sr-only">Name</label>
         <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>
-         
-        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Sign up</button>
+        <!--<label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" required>!>
+         -->
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
+
       </form>
-      </div>
- 
+      <h1>Contacts</h1>
+      <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                
+            <tr>
+        </thead>
+        <tbody>
+            {% for r in rows %}
+            <tr>
+                <td>{{ r.name }}</td>
+                <td>{{ r.email }}</td>
+               
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+     
        
  
       <footer class="footer">
-        <p>&copy; Company 2015</p>
+        <p>&copy; For Networking Group</p>
       </footer>
  
     </div>

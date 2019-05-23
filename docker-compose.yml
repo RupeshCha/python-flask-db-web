@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  python-flask-db-web:
+    image: python-flask-db-web
+    environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=
+            - POSTGRES_HOST=172.22.146.148
+            - POSTGRES_DB=postgres
+            - POSTGRES_PORT=32768
+    build: .
+    ports:
+      - 5000:5000
